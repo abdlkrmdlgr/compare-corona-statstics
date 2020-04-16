@@ -52,7 +52,7 @@ function clearFilterClick() {
 
 const ProductListPage = pageProps => (
     <Layout>
-        <div className={"navbar fixed-top"}>
+        <div className={"navbar"}>
             <div className={"text-center col-md-12"}>
                 <h2 className={"text-danger"}>
                     <FontAwesomeIcon icon={faExclamationTriangle} className={"mr-2"} width={32}/>
@@ -119,13 +119,13 @@ const ProductListPage = pageProps => (
         <style jsx>
             {`
 
-            .countries{
-                padding-top:210px;
-            }
-            .navbar{
-                padding-top:20px;
-                background-color:white;
-            }
+            // .countries{
+            //     padding-top:210px;
+            // }
+            // .navbar{
+            //     padding-top:20px;
+            //     background-color:white;
+            // }
 
                 .country{
                     height:100px
