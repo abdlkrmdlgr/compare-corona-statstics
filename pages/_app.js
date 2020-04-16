@@ -25,7 +25,7 @@ class CustomApp extends App {
                 $("#countryNameId").focus();
             }
 
-            if ($(".chartGroupButton") != null) {
+            if ($(".chartGroupButton") != null && $(".chartGroupButton button")[0] != null) {
                 $(".chartGroupButton button")[0].click();
             }
 

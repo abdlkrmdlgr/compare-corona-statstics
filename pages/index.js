@@ -103,7 +103,7 @@ const ProductListPage = pageProps => (
         </div>
         <div className="row countries">
             {pageProps.country.map(countryName => (
-                <div className={"country col-md-2 col-sm-4 col-6 card p-1 text-danger pointer"}
+                <div className={"country col-md-2 col-sm-4 col-6 card p-1 text-danger pointer mb-1"}
                      key={countryName}
                      onClick={(e) => { handleCountryClick(e, countryName);}}>
                     {
