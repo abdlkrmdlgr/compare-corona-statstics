@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 import {faProcedures} from "@fortawesome/free-solid-svg-icons/faProcedures";
 import {faRunning} from "@fortawesome/free-solid-svg-icons/faRunning";
+import Layout from "./layout";
 
 function drawChart(props, type) {
     var dataObject = [];
@@ -77,26 +78,28 @@ function drawChart(props, type) {
 };
 
 const LineChart = props => (
-    <div className={"text-right chartGroupButton pt-2"}>
-        <button className={"col-md-2 col-sm-3 col-4 btn btn-success p-2 mr-1"} onClick={() => drawChart(props, "R")}>
-            <FontAwesomeIcon icon={faRunning} className={"mr-2"} width={16}/>
-            Recovered Chart
-        </button>
+    <Layout>
+        <div className={"text-right chartGroupButton pt-2"}>
+            <button className={"col-md-2 col-sm-3 col-4 btn btn-success p-2 mr-1"} onClick={() => drawChart(props, "R")}>
+                <FontAwesomeIcon icon={faRunning} className={"mr-2"} width={16}/>
+                Recovered Chart
+            </button>
 
-        <button className={"col-md-2 col-sm-3 col-4 btn btn-warning mr-1 p-2"} onClick={() => drawChart(props, "C")}>
-            <FontAwesomeIcon icon={faProcedures} className={"mr-2"} width={16}/>
-            Confirmed Chart
-        </button>
+            <button className={"col-md-2 col-sm-3 col-4 btn btn-warning mr-1 p-2"} onClick={() => drawChart(props, "C")}>
+                <FontAwesomeIcon icon={faProcedures} className={"mr-2"} width={16}/>
+                Confirmed Chart
+            </button>
 
-        <button className={"col-md-2 col-sm-3 col-3 btn btn-danger mr-1 p-2"} onClick={() => drawChart(props, "D")}>
-            <FontAwesomeIcon icon={faSkullCrossbones} className={"mr-2"} width={16}/>
-            Death Chart
-        </button>
+            <button className={"col-md-2 col-sm-3 col-3 btn btn-danger mr-1 p-2"} onClick={() => drawChart(props, "D")}>
+                <FontAwesomeIcon icon={faSkullCrossbones} className={"mr-2"} width={16}/>
+                Death Chart
+            </button>
 
-        <div className={"canvasDiv"}>
-            <canvas id="line-chart" width="800" height="320"/>
+            <div className={"canvasDiv"}>
+                <canvas id="line-chart" width="800" height="320"/>
+            </div>
         </div>
-    </div>
+    </Layout>
 );
 
 export default LineChart;
