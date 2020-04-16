@@ -118,15 +118,6 @@ const ProductListPage = pageProps => (
         </div>
         <style jsx>
             {`
-
-            // .countries{
-            //     padding-top:210px;
-            // }
-            // .navbar{
-            //     padding-top:20px;
-            //     background-color:white;
-            // }
-
                 .country{
                     height:100px
                 }
