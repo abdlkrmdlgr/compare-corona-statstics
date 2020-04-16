@@ -1,0 +1,1 @@
+Corona istatistiklerini günlük olarak görebileceğiniz, istediğiniz ülkeleri seçerek, corona vakası sayısı, corona sebebi ile ölüm sayısı ve corona olup sağlığına kavuşan sayılarını karşılaştırabilirsiniz. Bunun için yapmanız gereken istediğiniz ülkeleri seçip, 

@@ -1,0 +1,36 @@
+import App from 'next/app';
+import React from "react";
+
+class CustomApp extends App {
+    render() {
+        const { Component, pageProps } = this.props;
+        return (
+            <div>
+                <Component {...pageProps} />
+            </div>
+        );
+    }
+
+    componentDidMount() {
+        $(function () {
+            $(document).on("click", ".countryBadge",function (e) {
+                var item = $($(".country .countryNameLabel:contains("+e.target.innerText.replace("#","")+")")[0].parentElement);
+                item.removeClass("bg-info");
+                item.removeClass("text-white");
+                item.addClass("text-danger");
+                $(".badge:contains("+e.target.innerText+")").remove();
+            });
+
+            if ($(".countries")!=null){
+                $(".countries").css("padding-top",$(".navbar").height()+"px");
+                $("#countryNameId").focus();
+            }
+
+            if ($(".chartGroupButton")!=null){
+                $(".chartGroupButton button")[0].click();
+            }
+        });
+    }
+}
+
+export default CustomApp;
