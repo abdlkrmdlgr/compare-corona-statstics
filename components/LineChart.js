@@ -5,6 +5,8 @@ import {faProcedures} from "@fortawesome/free-solid-svg-icons/faProcedures";
 import {faRunning} from "@fortawesome/free-solid-svg-icons/faRunning";
 
 function drawChart(props, type) {
+    console.log(props);
+    console.log(type);
     var dataObject = [];
     var dateObject = [];
     var detailMessage = null;
@@ -31,6 +33,8 @@ function drawChart(props, type) {
             }
         });
 
+        console.log("veriler işlendi");
+
         dateObject = datesArr;
 
         var sourceData = null;
@@ -55,14 +59,12 @@ function drawChart(props, type) {
             }
         );
         colorIndex += 1;
+        console.log("graph için herşey hazır.");
     });
-
-    // $(".canvasDiv canvas").remove();
-    // $(".canvasDiv").html('<canvas id="line-chart" width="800" height="320"/>');
 
     document.querySelector(".canvasDiv canvas").remove();
     document.querySelector(".canvasDiv").innerHTML = ('<canvas id="line-chart" width="800" height="320"/>');
-    var chart = new Chart(document.getElementById("line-chart"), {
+    new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
             labels: dateObject,
