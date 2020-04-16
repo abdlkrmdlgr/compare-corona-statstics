@@ -31,10 +31,12 @@ function handleCountryClick(clickedItem, countryName) {
         selectedCountry.push("<span class=\"countryBadge pointer badge badge-info p-2\">"+countryName+"</span>")
         $(".selectedCountryList").append("<span class=\"countryBadge pointer badge badge-info p-2 mr-1\">#"+countryName+"</span>");
     }
+    handleFilterClick();
 }
 function handleFilterClick() {
     if ($(".selectedCountryList").text().trim().length>0){
-        location.href="/country/"+$(".selectedCountryList").text().replace(/#/gi,"-").substring(1);
+        var url = "/country/"+$(".selectedCountryList").text().replace(/#/gi,"-").substring(1);
+        $(".filterButton").attr("href",url);
     }
 }
 
@@ -89,8 +91,7 @@ const ProductListPage = pageProps => (
                         <FontAwesomeIcon icon={faBrush} className={"mr-2"} width={16}/>
                         Clear Filter
                     </a>
-                    <a className={"btn btn-info"} onClick={()=>{
-                        handleFilterClick()}}>
+                    <a className={"btn btn-info filterButton"} href={""}>
                         <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
                         Show Chart By Country
                     </a>
@@ -102,7 +103,6 @@ const ProductListPage = pageProps => (
         </div>
         <div className="row countries">
             {pageProps.country.map(countryName => (
-                 // <Link href="/country/[country]" as={`/country/${countryName}`} key={countryName}>
                 <div className={"country col-md-2 col-sm-4 col-6 card p-1 text-danger pointer"}
                      key={countryName}
                      onClick={(e) => { handleCountryClick(e, countryName);}}>

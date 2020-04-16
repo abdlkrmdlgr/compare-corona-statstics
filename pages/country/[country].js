@@ -13,7 +13,7 @@ const Country = props => (
             <div>
                 <div dangerouslySetInnerHTML={{__html: props.countryBadge}}></div>
             </div>
-            {/*<LineChart {...props}/>*/}
+            <LineChart {...props}/>
     </Layout>
 );
 
