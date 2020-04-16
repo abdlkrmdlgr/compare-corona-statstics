@@ -60,7 +60,7 @@ function drawChart(props, type) {
     $(".canvasDiv canvas").remove();
     $(".canvasDiv").html('<canvas id="line-chart" width="800" height="320"/>');
 
-    var chart = new Chart(document.getElementById("line-chart"), {
+    new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
             labels: dateObject,

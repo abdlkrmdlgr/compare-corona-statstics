@@ -5,7 +5,7 @@
   "main": "_app.js",
   "browser": {
     "fs": false,
-    "child_process": false
+    "child_process": true
   },
   "scripts": {
     "dev": "next",
