@@ -1,6 +1,5 @@
-import {faChartLine, faFilter, faSkullCrossbones} from "@fortawesome/free-solid-svg-icons";
+import {faSkullCrossbones} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faClipboardCheck} from "@fortawesome/free-solid-svg-icons/faClipboardCheck";
 import React from "react";
 import {faProcedures} from "@fortawesome/free-solid-svg-icons/faProcedures";
 import {faRunning} from "@fortawesome/free-solid-svg-icons/faRunning";
@@ -58,8 +57,11 @@ function drawChart(props, type) {
         colorIndex += 1;
     });
 
-    $(".canvasDiv canvas").remove();
-    $(".canvasDiv").html('<canvas id="line-chart" width="800" height="320"/>');
+    // $(".canvasDiv canvas").remove();
+    // $(".canvasDiv").html('<canvas id="line-chart" width="800" height="320"/>');
+
+    document.querySelector(".canvasDiv canvas").remove();
+    document.querySelector(".canvasDiv").innerHTML = ('<canvas id="line-chart" width="800" height="320"/>');
     var chart = new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {

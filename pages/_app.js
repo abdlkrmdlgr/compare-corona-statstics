@@ -11,35 +11,33 @@ class CustomApp extends App {
     }
 
     componentDidMount() {
-        // $(function () {
-        //     // $(document).on("click", ".countryBadge", function (e) {
-        //     //     var item = $($(".country .countryNameLabel:contains(" + e.target.innerText.replace("#", "") + ")")[0].parentElement);
-        //     //     item.removeClass("bg-info");
-        //     //     item.removeClass("text-white");
-        //     //     item.addClass("text-danger");
-        //     //     $(".badge:contains(" + e.target.innerText + ")").remove();
-        //     // });
-        //     //
-        //     // if ($(".countries") != null) {
-        //     //     $(".countries").css("padding-top", $(".navbar").height() + "px");
-        //     //     $("#countryNameId").focus();
-        //     // }
-        //     //
-        //     // if ($(".chartGroupButton") != null) {
-        //     //     $(".chartGroupButton button")[0].click();
-        //     // }
-        //
-        //
-        // });
+        $(function () {
+            $(document).on("click", ".countryBadge", function (e) {
+                var item = $($(".country .countryNameLabel:contains(" + e.target.innerText.replace("#", "") + ")")[0].parentElement);
+                item.removeClass("bg-info");
+                item.removeClass("text-white");
+                item.addClass("text-danger");
+                $(".badge:contains(" + e.target.innerText + ")").remove();
+            });
 
-        window.dataLayer = window.dataLayer || [];
+            if ($(".countries") != null) {
+                $(".countries").css("padding-top", $(".navbar").height() + "px");
+                $("#countryNameId").focus();
+            }
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+            if ($(".chartGroupButton") != null) {
+                $(".chartGroupButton button")[0].click();
+            }
 
-        gtag('js', new Date());
-        gtag('config', 'UA-12370199-5');
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'UA-12370199-5');
+        });
     }
 }
 
