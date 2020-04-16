@@ -30,7 +30,7 @@ function handleCountryClick(clickedItem, countryName) {
         selectedCountry.push("<span class=\"countryBadge pointer badge badge-info p-2\">"+countryName+"</span>")
         $(".selectedCountryList").append("<span class=\"countryBadge pointer badge badge-info p-2 mr-1\">#"+countryName+"</span>");
     }
-    // handleFilterClick();
+    handleFilterClick();
 }
 function handleFilterClick() {
     if ($(".selectedCountryList").text().trim().length>0){
@@ -90,12 +90,12 @@ const ProductListPage = pageProps => (
                         <FontAwesomeIcon icon={faBrush} className={"mr-2"} width={16}/>
                         Clear Filter
                     </a>
-                    <Link href="/country/[country]" as={`/country/Turkey`}>
-                        <a className={"btn btn-info filterButton"} >
-                            <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
-                            Show Chart By Country
-                        </a>
-                    </Link>
+
+                    <a className={"btn btn-info filterButton"} >
+                        <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
+                        Show Chart By Country
+                    </a>
+
                 </div>
 
             </div>
