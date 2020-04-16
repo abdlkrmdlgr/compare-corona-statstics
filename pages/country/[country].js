@@ -19,11 +19,9 @@ const Country = props => (
 
 Country.getInitialProps = async function (context) {
     const {country} = context.query;
-    console.log(country);
 
     const res = await fetch('https://pomber.github.io/covid19/timeseries.json');
     const data = await res.json();
-
 
     data["Palestine"] = data["West Bank and Gaza"];
     data["United States"] = data["US"];
@@ -31,9 +29,6 @@ Country.getInitialProps = async function (context) {
     delete data["US"];
     delete data["MS Zaandam"];
     delete data["Diamond Princess"];
-
-
-    console.log(data);
 
     const dataCountryCodeByName = await import('../../countryNameToCode.json');
     var countryBadge = "Selected Countries: ";

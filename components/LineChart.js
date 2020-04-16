@@ -5,8 +5,6 @@ import {faProcedures} from "@fortawesome/free-solid-svg-icons/faProcedures";
 import {faRunning} from "@fortawesome/free-solid-svg-icons/faRunning";
 
 function drawChart(props, type) {
-    console.log(props);
-    console.log(type);
     var dataObject = [];
     var dateObject = [];
     var detailMessage = null;
@@ -33,10 +31,7 @@ function drawChart(props, type) {
             }
         });
 
-        console.log("veriler işlendi");
-
         dateObject = datesArr;
-
         var sourceData = null;
 
         if (type == "D") {
@@ -59,7 +54,6 @@ function drawChart(props, type) {
             }
         );
         colorIndex += 1;
-        console.log("graph için herşey hazır.");
     });
 
     document.querySelector(".canvasDiv canvas").remove();
