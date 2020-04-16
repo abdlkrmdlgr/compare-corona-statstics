@@ -13,14 +13,12 @@ const Layout = props => (
         <Head>
             <title>Compare Corona Statistics by Country</title>
             <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"/>
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"/>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"/>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"/>
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12370199-5"></script>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12370199-5"/>
         </Head>
         {props.children}
-
     </div>
 );
 
