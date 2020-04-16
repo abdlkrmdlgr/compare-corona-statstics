@@ -10,5 +10,4 @@ You can compare the number of corona cases, the number of deaths due to the coro
 Data on and after 01.03.2020 were used. It is always up to date.
 
 
-Veri kaynağı:https://pomber.github.io/covid19/timeseries.json
 Data source: https: //pomber.github.io/covid19/timeseries.json
