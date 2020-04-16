@@ -31,11 +31,9 @@ class CustomApp extends App {
             }
 
             window.dataLayer = window.dataLayer || [];
-
             function gtag() {
                 dataLayer.push(arguments);
             }
-
             gtag('js', new Date());
             gtag('config', 'UA-12370199-5');
         });

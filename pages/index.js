@@ -7,35 +7,39 @@ import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {faCode} from "@fortawesome/free-solid-svg-icons/faCode";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 import Link from "next/link";
+import Router from 'next/router';
 
 function handleCountrySearch() {
-    $(".country").css("display","none");
-    $(".countryNameLabel").each( function() {
+    $(".country").css("display", "none");
+    $(".countryNameLabel").each(function () {
         if ($(this).text().toLowerCase().match($("#countryNameId").val().toLowerCase())) {
-            $(this.parentElement).css("display","block");
+            $(this.parentElement).css("display", "block");
         }
     });
 }
 
 const selectedCountry = [];
+
 function handleCountryClick(clickedItem, countryName) {
     var item = $(clickedItem.currentTarget);
-    if (item.hasClass("bg-info text-white")){
+    if (item.hasClass("bg-info text-white")) {
         item.removeClass("bg-info text-white");
         item.addClass("text-danger");
-        $(".badge:contains("+countryName+")").remove()
-    }else{
+        $(".badge:contains(" + countryName + ")").remove()
+    } else {
         item.addClass("bg-info text-white");
         item.removeClass("text-danger");
-        selectedCountry.push("<span class=\"countryBadge pointer badge badge-info p-2\">"+countryName+"</span>")
-        $(".selectedCountryList").append("<span class=\"countryBadge pointer badge badge-info p-2 mr-1\">#"+countryName+"</span>");
+        selectedCountry.push("<span class=\"countryBadge pointer badge badge-info p-2\">" + countryName + "</span>")
+        $(".selectedCountryList").append("<span class=\"countryBadge pointer badge badge-info p-2 mr-1\">#" + countryName + "</span>");
     }
-    handleFilterClick();
+//    handleFilterClick();
 }
+
 function handleFilterClick() {
-    if ($(".selectedCountryList").text().trim().length>0){
-        var url = "/country/"+$(".selectedCountryList").text().replace(/#/gi,"-").substring(1);
-        $(".filterButton").attr("href",url);
+    if ($(".selectedCountryList").text().trim().length > 0) {
+        var url = "/country/" + $(".selectedCountryList").text().replace(/#/gi, "-").substring(1);
+        // $(".filterButton").attr("href", url);
+        Router.push(url);
     }
 }
 
@@ -85,16 +89,18 @@ const ProductListPage = pageProps => (
                            onKeyUp={handleCountrySearch}/>
                 </div>
                 <div className={"col-md-3 text-white"}>
-                    <a className={"btn btn-warning mr-1 text-dark"} onClick={()=>{
-                        clearFilterClick()}}>
+                    <a className={"btn btn-warning mr-1 text-dark"} onClick={() => {
+                        clearFilterClick()
+                    }}>
                         <FontAwesomeIcon icon={faBrush} className={"mr-2"} width={16}/>
                         Clear Filter
                     </a>
 
-                    <a className={"btn btn-info filterButton"} >
-                        <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
-                        Show Chart By Country
-                    </a>
+                        <a  className={"btn btn-info filterButton"}
+                            onClick={() => {handleFilterClick()}}>
+                            <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
+                            Show Chart By Country
+                        </a>
 
                 </div>
 
@@ -106,10 +112,15 @@ const ProductListPage = pageProps => (
             {pageProps.country.map(countryName => (
                 <div className={"country col-md-2 col-sm-4 col-6 card p-1 text-danger pointer mb-1"}
                      key={countryName}
-                     onClick={(e) => { handleCountryClick(e, countryName);}}>
+                     onClick={(e) => {
+                         handleCountryClick(e, countryName);
+                     }}>
+
                     {
-                        (pageProps.countryCodeByName[countryName]!=null)?
-                            <img src={"https://www.countryflags.io/"+pageProps.countryCodeByName[countryName]+"/shiny/64.png"} width={"64"}/>:""
+                        (pageProps.countryCodeByName[countryName] != null) ?
+                            <img
+                                src={"https://www.countryflags.io/" + pageProps.countryCodeByName[countryName] + "/shiny/64.png"}
+                                width={"64"}/> : ""
                     }
                     <div className={"countryNameLabel text-right"}>
                         {countryName}
@@ -140,7 +151,6 @@ const ProductListPage = pageProps => (
         </style>
     </Layout>
 );
-
 
 
 ProductListPage.getInitialProps = async function () {

@@ -77,7 +77,7 @@ function drawChart(props, type) {
 };
 
 const LineChart = props => (
-    <Layout>
+
         <div className={"text-right chartGroupButton pt-2"}>
             <button className={"col-md-2 col-sm-3 col-4 btn btn-success p-2 mr-1"} onClick={() => drawChart(props, "R")}>
                 <FontAwesomeIcon icon={faRunning} className={"mr-2"} width={16}/>
@@ -98,7 +98,7 @@ const LineChart = props => (
                 <canvas id="line-chart" width="800" height="320"/>
             </div>
         </div>
-    </Layout>
+
 );
 
 export default LineChart;
