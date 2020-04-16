@@ -20,10 +20,10 @@ class CustomApp extends App {
                 $(".badge:contains(" + e.target.innerText + ")").remove();
             });
 
-            // if ($(".countries") != null) {
-            //     $(".countries").css("padding-top", $(".navbar").height() + "px");
-            //     $("#countryNameId").focus();
-            // }
+            if ($(".countries") != null) {
+                $(".countries").css("padding-top", $(".navbar").height() + "px");
+                $("#countryNameId").focus();
+            }
 
             if ($(".chartGroupButton") != null && $(".chartGroupButton button")[0] != null) {
                 $(".chartGroupButton button")[0].click();
