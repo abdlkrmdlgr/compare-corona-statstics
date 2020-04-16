@@ -17,6 +17,7 @@ const Layout = props => (
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"/>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"/>
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-12370199-5"></script>
         </Head>
         {props.children}
 

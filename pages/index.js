@@ -92,7 +92,7 @@ const ProductListPage = pageProps => (
                     <a className={"btn btn-info"} onClick={()=>{
                         handleFilterClick()}}>
                         <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
-                        Filter Country
+                        Show Chart By Country
                     </a>
                 </div>
 

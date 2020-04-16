@@ -30,6 +30,13 @@ class CustomApp extends App {
                 $(".chartGroupButton button")[0].click();
             }
         });
+
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-12370199-5');
+
     }
 }
 
