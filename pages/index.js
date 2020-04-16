@@ -1,11 +1,9 @@
 import Layout from "../components/layout";
 import fetch from 'isomorphic-unfetch';
-import React from "react";
 import {faBrush, faFilter, faTrash} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faExclamationTriangle} from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
-import {faFileCode} from "@fortawesome/free-solid-svg-icons/faFileCode";
 import {faCode} from "@fortawesome/free-solid-svg-icons/faCode";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
 import Link from "next/link";

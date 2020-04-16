@@ -4,8 +4,8 @@
   "description": "corona statistics compare selected country",
   "main": "_app.js",
   "browser": {
-    "fs": false,
-    "child_process": false
+    "fs": true,
+    "child_process": true
   },
   "scripts": {
     "dev": "next",
