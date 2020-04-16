@@ -21,7 +21,7 @@ class CustomApp extends App {
             });
 
             if ($(".countries") != null) {
-                $(".countries").css("padding-top", $(".navbar").height() + "px");
+                // $(".countries").css("padding-top", $(".navbar").height() + "px");
                 $("#countryNameId").focus();
             }
 
