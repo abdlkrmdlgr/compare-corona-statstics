@@ -1,7 +1,7 @@
 {
   "name": "compare-corona-statistic-by-country",
   "version": "1.0.0",
-  "description": "",
+  "description": "corona statistics compare selected country",
   "main": "_app.js",
   "browser": {
     "fs": false,
