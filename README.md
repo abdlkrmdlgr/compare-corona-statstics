@@ -14,4 +14,5 @@ Data on and after 01.03.2020 were used. It is always up to date.
 Bağımlılıklar
 
 https://pomber.github.io/covid19/timeseries.json
+
 https://www.countryflags.io/
