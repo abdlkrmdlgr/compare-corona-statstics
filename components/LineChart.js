@@ -32,6 +32,7 @@ function drawChart(props, type) {
         });
 
         dateObject = datesArr;
+
         var sourceData = null;
 
         if (type == "D") {
@@ -56,9 +57,10 @@ function drawChart(props, type) {
         colorIndex += 1;
     });
 
-    document.querySelector(".canvasDiv canvas").remove();
-    document.querySelector(".canvasDiv").innerHTML = ('<canvas id="line-chart" width="800" height="320"/>');
-    new Chart(document.getElementById("line-chart"), {
+    $(".canvasDiv canvas").remove();
+    $(".canvasDiv").html('<canvas id="line-chart" width="800" height="320"/>');
+
+    var chart = new Chart(document.getElementById("line-chart"), {
         type: 'line',
         data: {
             labels: dateObject,
