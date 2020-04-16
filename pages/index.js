@@ -8,6 +8,7 @@ import {faLink} from "@fortawesome/free-solid-svg-icons/faLink";
 import {faFileCode} from "@fortawesome/free-solid-svg-icons/faFileCode";
 import {faCode} from "@fortawesome/free-solid-svg-icons/faCode";
 import {faUser} from "@fortawesome/free-solid-svg-icons/faUser";
+import Link from "next/link";
 
 function handleCountrySearch() {
     $(".country").css("display","none");
@@ -31,7 +32,7 @@ function handleCountryClick(clickedItem, countryName) {
         selectedCountry.push("<span class=\"countryBadge pointer badge badge-info p-2\">"+countryName+"</span>")
         $(".selectedCountryList").append("<span class=\"countryBadge pointer badge badge-info p-2 mr-1\">#"+countryName+"</span>");
     }
-    handleFilterClick();
+    // handleFilterClick();
 }
 function handleFilterClick() {
     if ($(".selectedCountryList").text().trim().length>0){
@@ -54,10 +55,10 @@ const ProductListPage = pageProps => (
     <Layout>
         <div className={"navbar"}>
             <div className={"text-center col-md-12"}>
-                <h2 className={"text-danger"}>
+                <h4 className={"text-danger"}>
                     <FontAwesomeIcon icon={faExclamationTriangle} className={"mr-2"} width={32}/>
                     Heyyy! Compare Corona Stats by Country of Your Choice
-                </h2>
+                </h4>
                 <p className={"text-right small"}>
 
                     <a target={"_blank"} href={"http://corona.abdulkerimdulger.com"}>
@@ -91,10 +92,12 @@ const ProductListPage = pageProps => (
                         <FontAwesomeIcon icon={faBrush} className={"mr-2"} width={16}/>
                         Clear Filter
                     </a>
-                    <a className={"btn btn-info filterButton"} href={""}>
-                        <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
-                        Show Chart By Country
-                    </a>
+                    <Link href="/country/[country]" as={`/country/Turkey`}>
+                        <a className={"btn btn-info filterButton"} >
+                            <FontAwesomeIcon icon={faFilter} className={"mr-2"} width={16}/>
+                            Show Chart By Country
+                        </a>
+                    </Link>
                 </div>
 
             </div>
