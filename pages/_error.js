@@ -12,6 +12,7 @@ const Error = ({ statusCode }) => {
         <div>
             <h1>Something went wrong</h1>
             <p>{errorMessage}</p>
+            <p>{statusCode}</p>
         </div>
     )
 }
